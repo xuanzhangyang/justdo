@@ -8,8 +8,8 @@ import java.util.Map;
 
 public class PayApiTest {
     private static final String mch_id="1500080462";//商户号
-    private static final String certPath="D:\\qianming\\apiclient_cert.p12";//证书路径
-    private static final String partnerKey="6f54166dae87d140e24c6104001a8147";//密钥
+    private static final String certPath="I:\\apiclient_cert.p12";//证书路径
+    private static final String partnerKey="76172cce2a199e6d2e0c4588ac8d0e48";//密钥
 
 
 	/**
@@ -23,8 +23,8 @@ public class PayApiTest {
 			params.put("mch_id", mch_id);
 			params.put("partner_trade_no", System.currentTimeMillis()+"");
 			params.put("nonce_str", System.currentTimeMillis()+"");
-			params.put("enc_bank_no", RSAUtils.encryptByPublicKeyByWx("6217907500001304911", PUBLIC_KEY));//收款方银行卡号
-			params.put("enc_true_name", RSAUtils.encryptByPublicKeyByWx("陈裕豪", PUBLIC_KEY));//收款方用户名
+			params.put("enc_bank_no", RSAUtils.encryptByPublicKeyByWx("6217907500001471850", PUBLIC_KEY));//收款方银行卡号
+			params.put("enc_true_name", RSAUtils.encryptByPublicKeyByWx("王思林", PUBLIC_KEY));//收款方用户名
 			params.put("bank_code", "1026");//收款方开户行
 			params.put("amount", "1");
 			params.put("desc", "微信转账");

@@ -42,8 +42,9 @@ wechat:
   mpAppId: wx04217e27ba2ec8bc
   mpAppSecret: 3367f43020d819c0fb92453f0961a828
   mchId: 1500080462
-  mchKey: 6f54166dae87d140e24c6104001a8147
+  mchKey: 76172cce2a199e6d2e0c4588ac8d0e48
   keyPath: /home/apiclient_cert.p12
+#  keyPath: I:\apiclient_cert.p12
   notifyUrl: http://wxin.suishouss.com/sell/pay/notify
   openAppId: 4564
   openAppSecret: fdgfdg

@@ -114,7 +114,7 @@
                                                 <#if currentPage lte 1>
                                                     <a class="prev" href="#">上一页</a>
                                                 <#else>
-                                                    <a class="prev" href="/sell/admin/allist?page=${currentPage - 1}&size=${size}">上一页</a>
+                                                    <a class="prev" href="/sell/admin/alllist?page=${currentPage - 1}&size=${size}">上一页</a>
                                                 </#if>
 
                                                 <#list 1..sellerInfoPage.getTotalPages() as index>
@@ -122,14 +122,14 @@
                                                         <a class="active" href="#">${index}</a>
                                                     <#else>
                                                         <#if currentPage lte 0>
-                                                            <a href="/sell/admin/allist?page=${index}&size=${size}">${index}</a>
+                                                            <a href="/sell/admin/alllist?page=${index}&size=${size}">${index}</a>
                                                         </#if>
                                                     </#if>
                                                 </#list>
                                                 <#if currentPage gte sellerInfoPage.getTotalPages()>
                                                     <a class="next" href="#">下一页</a>
                                                 <#else>
-                                                    <a class="next" href="/sell/admin/allist?page=${currentPage + 1}&size=${size}">下一页</a>
+                                                    <a class="next" href="/sell/admin/alllist?page=${currentPage + 1}&size=${size}">下一页</a>
                                                 </#if>
                                         <div class="count"><span>共&nbsp;${sellerInfoPage.getTotalPages()}&nbsp;页</span> <span>当前第&nbsp;${currentPage}&nbsp;页</span> </div>
                                     </div>

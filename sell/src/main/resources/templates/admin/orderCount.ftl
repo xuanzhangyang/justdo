@@ -67,7 +67,7 @@
                     <#--</form>-->
                     <#--</div>-->
                     <#--</div>-->
-                        <h2>商家点击量</h2>
+                        <h2>商家订单量</h2>
                         <div class="panel dataMPan2">
                             <div class="panel-body">
                                 <ul class="chart1">
@@ -88,7 +88,7 @@
 								<#if currentPage lte 1>
                                     <a class="prev" href="#">上一页</a>
                                 <#else>
-                                    <a class="prev" href="/sell/admin/turnover?page=${currentPage - 1}&size=${size}&date=${date}">上一页</a>
+                                    <a class="prev" href="/sell/admin/visit0?page=${currentPage - 1}&size=${size}&date=${date}">上一页</a>
                                 </#if>
 
 								<#list 1..sellerInfoPage.getTotalPages() as index>
@@ -96,14 +96,14 @@
                                         <a class="active" href="#">${index}</a>
                                     <#else>
                                         <#if currentPage lte 0>
-                                            <a href="/sell/admin/turnover?page=${index}&size=${size}&date=${date}">${index}</a>
+                                            <a href="/sell/admin/visit0?page=${index}&size=${size}&date=${date}">${index}</a>
                                         </#if>
                                     </#if>
                                 </#list>
 								<#if currentPage gte sellerInfoPage.getTotalPages()>
                                     <a class="next" href="#">下一页</a>
                                 <#else>
-                                    <a class="next" href="/sell/admin/turnover?page=${currentPage + 1}&size=${size}&date=${date}">下一页</a>
+                                    <a class="next" href="/sell/admin/visit0?page=${currentPage + 1}&size=${size}&date=${date}">下一页</a>
                                 </#if>
                                 <div class="count"><span>共&nbsp;${sellerInfoPage.getTotalPages()}&nbsp;页</span> <span>当前第&nbsp;${currentPage}&nbsp;页</span> </div>
                             </div>

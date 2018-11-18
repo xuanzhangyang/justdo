@@ -265,6 +265,7 @@ public class AdminController{
         cal.setTime(new Date());
         cal.add(Calendar.DATE, -date);
 
+        System.out.println( date );
 
         map.put("sellerInfoPage",sellerInfoPage);
         map.put("currentPage", page);

@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Map;
@@ -60,12 +61,25 @@ public class SellerfinanceController {
         }
 
         Calendar cal = Calendar.getInstance();
-        cal.setTime(new Date());
-        cal.add(Calendar.DATE, -2);
+        Date date = new Date();
+//        date.set(Calendar.DATE, date.get(Calendar.DATE) - 1);
+        cal.setTime(date);
+
+
+
+        cal.add(Calendar.DATE, -1);
+        //当天的结束时间
+        cal.set(Calendar.HOUR_OF_DAY, 23);
+        cal.set(Calendar.MINUTE, 59);
+        cal.set(Calendar.SECOND, 59);
+
+
+
+
 
         PageRequest request=new PageRequest(page-1,size);
         Page<OrderDTO> orderDTOPage=orderService.findBySellerIdAndOrderStatusAndCreateTimeAfter(sellerInfo.getSellerId(),OrderStatusEnum.FINISHED.getCode(),
-                                    new Date(),request);
+                cal.getTime(),request);
 
 
         BigDecimal count=orderService.sum(sellerInfo.getSellerId(),OrderStatusEnum.FINISHED.getCode(),cal.getTime());

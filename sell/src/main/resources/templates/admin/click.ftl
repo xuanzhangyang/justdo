@@ -47,27 +47,21 @@
 				<div class="main">
 					<div class="row dataM1">
 						<div class="col-md-12">
-							<div class="panel dataMPan1">
-								<div class="panel-heading">
-									<div class="title">筛选条件</div>
-								</div>
-								<div class="panel-body">
-                                    <form id="visit" method="get" action="/sell/admin/visit">
-										<div class="dataCTop dataQTop clearfix">
-											<div class="dataCTop2 clearfix"><span class="name">点击量</span>
-												<div class="btn-group">
-													<select class="form-control" name="date">
-                                                        <option value="1" <#if (((date)!'') == 1)>selected="selected"</#if> >今日点击量</option>
-                                                        <option value="7" <#if (((date)!'') == 7)>selected="selected"</#if> >本周点击量</option>
-                                                        <option value="30" <#if (((date)!'') == 30)>selected="selected"</#if> >本月点击量</option>
-													</select>
-												</div>
-											</div>
-                                            <a class="search_btn"  onclick="visit()" href="javascript:void(0)">查询</a>
-										</div>
-									</form>
-								</div>
-							</div>
+							<#--<div class="panel dataMPan1">-->
+								<#--<div class="panel-heading">-->
+									<#--<div class="title">筛选条件</div>-->
+								<#--</div>-->
+								<#--<div class="panel-body">-->
+                                    <#--&lt;#&ndash;<form id="visit" method="get" action="/sell/admin/visit">&ndash;&gt;-->
+										<#--&lt;#&ndash;&lt;#&ndash;<div class="dataCTop dataQTop clearfix">&ndash;&gt;&ndash;&gt;-->
+											<#--&lt;#&ndash;&lt;#&ndash;<div class="dataCTop2 clearfix"><span class="name">点击量</span>&ndash;&gt;&ndash;&gt;-->
+
+											<#--&lt;#&ndash;&lt;#&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+                                            <#--&lt;#&ndash;&lt;#&ndash;&lt;#&ndash;<a class="search_btn"  onclick="visit()" href="javascript:void(0)">查询</a>&ndash;&gt;&ndash;&gt;&ndash;&gt;-->
+										<#--&lt;#&ndash;&lt;#&ndash;</div>&ndash;&gt;&ndash;&gt;-->
+									<#--&lt;#&ndash;</form>&ndash;&gt;-->
+								<#--</div>-->
+							<#--</div>-->
 							<h2>商家点击量</h2>
 							<div class="panel dataMPan2">
 								<div class="panel-body">
@@ -89,7 +83,7 @@
 								<#if currentPage lte 1>
                                     <a class="prev" href="#">上一页</a>
 								<#else>
-                                    <a class="prev" href="/sell/admin/turnover?page=${currentPage - 1}&size=${size}&date=${date}">上一页</a>
+                                    <a class="prev" href="/sell/admin/visit?page=${currentPage - 1}&size=${size}&date=${date}">上一页</a>
 								</#if>
 
 								<#list 1..sellerInfoPage.getTotalPages() as index>
@@ -97,14 +91,14 @@
                                         <a class="active" href="#">${index}</a>
 									<#else>
 										<#if currentPage lte 0>
-                                            <a href="/sell/admin/turnover?page=${index}&size=${size}&date=${date}">${index}</a>
+                                            <a href="/sell/admin/visit?page=${index}&size=${size}&date=${date}">${index}</a>
 										</#if>
 									</#if>
 								</#list>
 								<#if currentPage gte sellerInfoPage.getTotalPages()>
                                     <a class="next" href="#">下一页</a>
 								<#else>
-                                    <a class="next" href="/sell/admin/turnover?page=${currentPage + 1}&size=${size}&date=${date}">下一页</a>
+                                    <a class="next" href="/sell/admin/visit?page=${currentPage + 1}&size=${size}&date=${date}">下一页</a>
 								</#if>
                                     <div class="count"><span>共&nbsp;${sellerInfoPage.getTotalPages()}&nbsp;页</span> <span>当前第&nbsp;${currentPage}&nbsp;页</span> </div>
                                 </div>

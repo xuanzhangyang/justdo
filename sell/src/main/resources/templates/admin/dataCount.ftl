@@ -92,15 +92,15 @@
 													<#if currentPage lte 1>
 		                                                <a class="prev" href="#">上一页</a>
 													<#else>
-		                                               <a class="prev" href="/sell/seller/order/turnover?page=${currentPage - 1}&size=${size}">上一页</a>
+		                                               <a class="prev" href="/sell/admin/turnover?page=${currentPage - 1}&size=${size}">上一页</a>
 													</#if>
 
 														<#list 1..sellerInfoPage.getTotalPages() as index>
-															<#if currentPage == index>
+															<#if currentPage == index>.
 																<a class="active" href="#">${index}</a>
 															<#else>
 																<#if currentPage lte 0>
-																	<a href="/sell/seller/order/turnover?page=${index}&size=${size}">${index}</a>
+																	<a href="/sell/admin/turnover?page=${index}&size=${size}">${index}</a>
 																</#if>
 															</#if>
 														</#list>
